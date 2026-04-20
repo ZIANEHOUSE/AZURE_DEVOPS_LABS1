@@ -1,15 +1,25 @@
-<Project Sdk="Microsoft.NET.Sdk">
-
-  <PropertyGroup>    
+﻿<Project Sdk="Microsoft.NET.Sdk" ToolsVersion="15.0">
+  <PropertyGroup>
     <Nullable>enable</Nullable>
-
     <IsPackable>false</IsPackable>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <TargetFrameworkProfile />
+    <ProjectGuid>{D53EF010-8F8C-4337-A059-456E19D8AE63}</ProjectGuid>
   </PropertyGroup>
-
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
   <ItemGroup>
     <None Remove="appsettings.test.json" />
   </ItemGroup>
-
   <ItemGroup>
     <Content Include="appsettings.test.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -17,7 +27,6 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
   </ItemGroup>
-
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" />
@@ -28,10 +37,8 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
   </ItemGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\..\src\PublicApi\PublicApi.csproj" />
     <ProjectReference Include="..\..\src\Web\Web.csproj" />
   </ItemGroup>
-
 </Project>
